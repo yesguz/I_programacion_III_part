@@ -1,12 +1,9 @@
 /**
- * Definición de Enumeraciones (Enums) para el Ejercicio 2.
+ * Definición de Enumeraciones para el Ejercicio 2.
  * Estudiante: Yesmir Guzmán - Cédula: 20130682
- * 
- * Las enumeraciones nos permiten crear un grupo de constantes con nombre, lo cual hace
- * que el código sea más legible y fácil de mantener, evitando "números mágicos" o cadenas sueltas.
  */
 
-// Enumeración para clasificar los Géneros de las Películas.
+// Clasificación de Géneros de películas
 export enum GeneroPelicula {
     ACCION = 'Acción',
     COMEDIA = 'Comedia',
@@ -16,7 +13,7 @@ export enum GeneroPelicula {
     AVENTURA = 'Aventura'
 }
 
-// Enumeración para definir los Países de origen de las Películas.
+// Origen de las películas
 export enum PaisPelicula {
     USA = 'Estados Unidos',
     ESPANA = 'España',
