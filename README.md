@@ -19,11 +19,13 @@ Este repositorio contiene la resolución de la **Evaluación Práctica 1**, impl
 2.  **Server Action:** La lógica de procesamiento ocurre en el servidor (`action.ts`). La función `submitAnimal` recibe los datos del `FormData`, extrae el nombre y ejecuta una redirección (`redirect`) hacia la página de resultados.
 3.  **Resultado:** La página `/ejercicio1/result` lee el parámetro de búsqueda (`searchParams`) y lo renderiza en pantalla. Esto cumple el requisito de "interceptar y recargar" en una nueva vista.
 
-### Ejercicio 2: Enums con TypeScript
-**Objetivo:** Uso de enumeraciones para datos constantes.
+### Ejercicio 2: Registro de Películas (Enums + Estado)
+**Objetivo:** Uso de enumeraciones y persistencia temporal.
 **Implementación:**
-1.  **Definición:** Se crearon los Enums `GeneroPelicula` y `PaisPelicula` en `src/types/enums.ts`.
-2.  **Visualización:** La página `/ejercicio2` importa estos tipos, los convierte en arrays iterables (`Object.values`) y genera listas dinámicas dentro de tarjetas con estilo "Glassmorphism".
+1.  **Modelo de Datos:** Se define una interfaz `Pelicula` y un array en memoria (`src/lib/storage.ts`) que actúa como base de datos temporal del servidor.
+2.  **Formulario:** Permite ingresar Título y seleccionar Género y País (usando los `Enums` definidos).
+3.  **Server Action:** La función `registrarPelicula` recibe los datos, crea el objeto y lo guarda en el array. Luego utiliza `revalidatePath` para actualizar la vista automáticamente.
+4.  **Tabla:** Se renderiza una tabla HTML que lista todas las películas almacenadas en la sesión actual del servidor.
 
 ---
 
